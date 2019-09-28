@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <NavBar />
+    <nav-bar />
 
     <router-view />
 
@@ -26,7 +26,7 @@ export default {
   text-align: center;
   color: #2c3e50;
   display: flex;
-  min-height: 100vh;
+  min-height: 85vh;
   flex-direction: column;
 }
 
