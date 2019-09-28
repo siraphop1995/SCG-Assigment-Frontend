@@ -1,8 +1,8 @@
 {
-    "name": "blog",
+    "name": "deploy",
     "version": "1.0.0",
-    "description": "personalblog",
-    "author": "Awesome Author",
+    "description": "for scg-assigment-frontend deployment",
+    "author": "Siraphop",
     "private": true,
     "scripts": {
         "postinstall": "npm install express"

@@ -39,13 +39,11 @@
 
 <script>
 import axios from 'axios';
-import HelloWorld from '@/components/HelloWorld.vue';
 import Card from '@/components/Card.vue';
 
 export default {
   name: 'home',
   components: {
-    HelloWorld,
     Card
   },
 
