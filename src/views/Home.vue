@@ -3,6 +3,8 @@
     <!-- <img alt="Vue logo" src="../assets/logo.png" /> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
     <div class="container-fluid mt-4">
+      <b-spinner v-if="loading" variant="primary" label="Spinning"></b-spinner>
+
       <b-card-group deck>
         <b-card
           v-for="place in places"
@@ -22,6 +24,7 @@
         </b-card>
       </b-card-group>
     </div>
+    <!-- <img alt="Vue logo" src="../assets/logo.png" /> -->
   </div>
 </template>
 
@@ -35,7 +38,10 @@ export default {
     HelloWorld
   },
   data: () => ({
-    places: []
+    places: [],
+    loading: true,
+    dataLoaded: false,
+    dataMessage: 'Loading data'
   }),
   created() {
     this.initialize();
@@ -45,9 +51,13 @@ export default {
       try {
         const response = await axios.get('/findPlace');
         this.places = response.data.results;
+        this.dataLoaded = true;
+
         console.log(response.data);
       } catch (err) {
         console.error(err);
+      } finally {
+        this.loading = false;
       }
     },
 
